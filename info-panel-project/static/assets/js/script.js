@@ -3,7 +3,7 @@ $(document).ready(function() {
     var idLogo;
 
     $('img.logoDisplayed').click(function(e) { // selection of the line to modify
-        idLogo = event.target.id;
+        idLogo = this.id;
         $('.frame2').hide();
         $('.frame2').css({ 'top': e.pageY - 50, 'left': e.pageX });
         $('.frame2').show();
@@ -14,7 +14,7 @@ $(document).ready(function() {
         $('.okbtn').unbind().click(function() {
             $('.frame2').hide();
             srcSelectedLogo = $('option:selected', '.picker').attr('data-img-src');
-            $('#' + idLogo + '.logoDisplayed').attr('src', srcSelectedLogo);
+            $('img#' + idLogo + '.logoDisplayed').attr('src', srcSelectedLogo);
         });
 
         $('.js-cropok').click(function() {
@@ -28,7 +28,7 @@ $(document).ready(function() {
     $('html').click(function() {
         $('.frame2').hide();
         srcSelectedLogo = $('option:selected', '.picker').attr('data-img-src');
-        $('#' + idLogo + '.logoDisplayed').attr('src', srcSelectedLogo);
+        $('img#' + idLogo + '.logoDisplayed').attr('src', srcSelectedLogo);
     });
 
     $('.frame2').click(function(event) {
