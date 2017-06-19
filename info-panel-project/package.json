@@ -10,11 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "lodash": "^4.17.4",
     "lowdb": "^0.16.2",
-    "mongoose": "^4.10.6",
-    "mongoose-delete": "^0.3.4",
     "socket.io": "^2.0.3",
-    "underscore": "^1.8.3"
   }
 }

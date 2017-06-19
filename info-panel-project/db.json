@@ -2,60 +2,53 @@
   "posts": [
     {
       "id": 1,
-      "title": "gres",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "title": "ASSEMBLée générale",
+      "logosrc": "assets/images/logo/rhone_tourisme.gif"
     },
     {
       "id": 2,
-      "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "title": "Réunion extraordinaire",
+      "logosrc": "assets/images/logo/unat.gif"
     },
     {
       "id": 3,
-      "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "title": "meet-up",
+      "logosrc": "assets/images/logo/ville_lyon.gif"
     },
     {
       "id": 4,
-      "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "title": "workshop",
+      "logosrc": "assets/images/logo/only_lyon.gif"
     },
     {
       "id": 5,
       "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/logo/lyon_equi.gif"
     },
     {
       "id": 6,
       "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/logo/europe_eco.gif"
     },
     {
       "id": 7,
       "title": "",
-      "logosrc": "assets/images/CISL.png",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/logo/ethicetape.gif"
     },
     {
       "id": 8,
       "title": "",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/CISL.png"
     },
     {
       "id": 9,
       "title": "",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/CISL.png"
     },
     {
       "id": 10,
       "title": "",
-      "pictosrc": "assets/images/salleFreresLumiere.png"
+      "logosrc": "assets/images/CISL.png"
     }
   ]
 }
