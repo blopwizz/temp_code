@@ -1,16 +1,16 @@
-/* 
-server.js
+/************************************************************ 
+app.js
 
-Description:
+1. Description:
 server-side data management in Node.js
 
-Tools:
+2. Dependencies:
 Web-app framework: Express (https://expressjs.com/)
 Local database: lowdb (https://github.com/typicode/lowdb)
 Event-based real-time communication between client and server: 
 socket.io (https://socket.io/)
 
-*/
+************************************************************/
 
 var express = require('express');
 var app = express(); //create server
@@ -22,24 +22,54 @@ var SocketIOFile = require('socket.io-file');
 var fs = require('fs');
 
 
-/* start database ... 
+/**************************************
+Start database ... 
 using file a-sync storage. 
-For ease of use, read is synchronous.*/
-var db = low('db.json', {
-    storage: fileAsync
-});
+For ease of use, read is synchronous.
+***************************************/
+var db = low('db.json', { storage: fileAsync });
 
-// assets location 
+//*********** ROUTES *******************
 app.use(express.static(__dirname + '/static'));
-
-// when loading display page
-app.get('/', function(req, res) {
-    io.on('connection', function(socket) {
-        socket.emit('update display', db.getState());
-    });
-    res.sendFile(__dirname + '/display.html');
+app.get('/app.js', function(req, res, next) {
+    return res.sendFile(__dirname + '/server.js');
+});
+app.get('/socket.io.js', function(req, res, next) {
+    return res.sendFile(__dirname + '/node_modules/socket.io-client/dist/socket.io.js');
+});
+app.get('/socket.io-file-client.js', function(req, res, next) {
+    return res.sendFile(__dirname + '/node_modules/socket.io-file-client/socket.io-file-client.js');
+});
+app.get('/posts/:id', function(req, res) {
+    var post = db.get('posts')
+        .find({ id: req.params.id })
+        .value();
+    res.send(post);
+});
+app.post('/blocks', function(req, res) {
+    db.get('posts')
+        .push(req.body)
+        .last()
+        .assign({ id: Date.now() })
+        .write()
+        .then(function(post) {
+            res.send(post);
+        });
 });
 
+// dynamically include routes (Controller)
+fs.readdirSync('./controllers').forEach(function(file) {
+    if (file.substr(-3) == '.js') {
+        route = require('./controllers/' + file);
+        route.controller(app);
+    }
+});
+
+//************ SERVER INIT **************************
+db.defaults({ posts: [] }).write()
+    .then(function() {
+        http.listen(3000, function() {});
+    });
 
 // when loading edit page
 app.get('/edit', function(req, res) {
@@ -56,44 +86,15 @@ app.get('/edit', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-
-app.get('/server.js', function(req, res, next) {
-    return res.sendFile(__dirname + '/server.js');
-});
-
-app.get('/socket.io.js', function(req, res, next) {
-    return res.sendFile(__dirname + '/node_modules/socket.io-client/dist/socket.io.js');
-});
-
-app.get('/socket.io-file-client.js', function(req, res, next) {
-    return res.sendFile(__dirname + '/node_modules/socket.io-file-client/socket.io-file-client.js');
-});
-
-// Routes
-app.get('/posts/:id', function(req, res) {
-    var post = db.get('posts')
-        .find({ id: req.params.id })
-        .value();
-    res.send(post);
-});
-
-app.post('/blocks', function(req, res) {
-    db.get('posts')
-        .push(req.body)
-        .last()
-        .assign({ id: Date.now() })
-        .write()
-        .then(function(post) {
-            res.send(post);
-        });
-});
-
-// database init
-db.defaults({ posts: [] }).write()
-    .then(function() {
-        http.listen(3000, function() {
-        });
+// when loading display page
+app.get('/', function(req, res) {
+    io.on('connection', function(socket) {
+        socket.emit('update display', db.getState());
     });
+    res.sendFile(__dirname + '/display.html');
+});
+
+
 
 
 

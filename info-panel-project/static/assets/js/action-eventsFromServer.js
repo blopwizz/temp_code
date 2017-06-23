@@ -1,7 +1,8 @@
  var socket = io();
- var uploader = new SocketIOFileClient(socket);
+ 
  var form = document.getElementById('upload');
-
+ 
+var uploader = new SocketIOFileClient(socket);
  //************* uploader states *******************
  uploader.on('start', function(fileInfo) {
      console.log('Start uploading', fileInfo);
