@@ -1,18 +1,13 @@
 $(document).ready(function() {
-  
-
 
     //*************** FRAME 2 *******************
     $('img.logoDisplayed').click(function(e) { // selection of the line to modify
-          var idLogo;
+        var idLogo = this.id;
+        var srcSelectedLogo;
         $('.picker').imagepicker(); // load image picker script
-        idLogo = this.id;
         $('.frame2').hide();
         $('.frame2').css({ 'top': e.pageY - 50, 'left': e.pageX });
         $('.frame2').show();
-
-        var srcSelectedLogo;
-
         $('.column-right').unbind().click(function() {
             $('.frame2').hide();
             srcSelectedLogo = $('option:selected', '.picker').attr('data-img-src');
@@ -45,7 +40,7 @@ $(document).ready(function() {
         $('.picker-picto').imagepicker();
         idPicto = this.id;
         $('.frame-picto').hide();
-        $('.frame-picto').css({ 'top': e.pageY - 50, 'left': e.pageX });
+        $('.frame-picto').css({ 'top': e.pageY - 50, 'left': e.pageX-350 });
         $('.frame-picto').show();
 
         $('#okpictobtn').unbind().click(function() {
