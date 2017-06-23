@@ -14,7 +14,7 @@ function measureText(txt, font) {
     return {
         width: $tag.width(),
         height: $tag.height()
-    }
+    };
 }
 
 
@@ -29,7 +29,7 @@ function shrinkToFill(input, fontSize, fontWeight, fontFamily) {
     if (textWidth > maxWidth) {
         // if it's too big, calculate a new font size
         // the extra .9 here makes up for some over-measures
-        fontSize = fontSize * maxWidth / textWidth * .9;
+        fontSize = fontSize * maxWidth / textWidth * 0.9;
         font = fontWeight + " " + fontSize + "px " + fontFamily;
         // and set the style on the input
         $input.css({ font: font });

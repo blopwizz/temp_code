@@ -30,12 +30,22 @@
 /********** LAYOUT FRAME 1 ***************/
 
 body {
-    background: #FFFFFF;
+    background: #000000;
+}
+
+div.black-banner-right {
+    position: absolute;
+    right: 0px;
+    width: 2px;
+    height: 1928px;
+    background: #000000;
+    z-index: 3;
 }
 
 div.frame1 {
+background: #FFFFFF;
     position: absolute;
-    width: 1080px;
+    width: 1081px;
     height: auto;
     z-index: 1;
 }
@@ -59,36 +69,59 @@ div.frame3 {
     opacity: 0.8;
 }
 
+div.frame-picto {
+    display: none;
+    position: absolute;
+    width: 30%;
+    background: #FFFFFF;
+    z-index: 10;
+    -moz-box-shadow: 5px 5px 20px 5px #999;
+    -webkit-box-shadow: 5px 5px 20px 5px #999;
+}
 
 table {
     width: 100%;
 }
 
-
 div.frame1btns {
-    padding: 50px;
-    padding-top: 100px;
-    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
 }
-
+ 
 button {
-    display: inline-block;
     color: white;
-    border: none;
     cursor: pointer;
-    width: 40%;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 30px;
+    margin: 50px;
 }
 
-.publishbtn {
-    background-color: #3b5998;
-    padding: 14px 20px;
+.reloadbtn {
+    -webkit-flex: initial;
+    flex: initial;
+    background-color: #29bc5a;
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 50px 20px;
 }
 
 .resetbtn {
     background-color: #fe001a;
-    padding: 14px 20px;
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 50px 20px;
+}
+
+.publishbtn {
+    background-color: #3b5998;
+    padding: 50px 20px;
+    width: 100%;
 }
 
 
@@ -99,40 +132,53 @@ img {
     margin: auto;
 }
 
+
 /*--------- LEFT CELL ----------*/
+
 td.left {
     width: 250px;
     height: 159px;
     padding: 0px;
 }
+
 .logoDisplayed {
     max-width: 100%;
     height: auto;
+    max-height: 159px;
 }
+
 
 /*--------- RIGHT CELL ----------*/
 
 td.right {
     width: 220px;
     height: 159px;
-    padding: 5px;
-}
-.picto {
-    width: 220px;
+    padding: 0px;
 }
 
+.picto {
+    max-width: 100%;
+    height: auto;
+    max-height: 159px;
+}
+
+
 /*--------- CENTER-TOP CELL ----------*/
+
 td.center-top {
     width: auto;
     height: 79px;
     vertical-align: middle;
 }
+
 .titre {
     width: 610px;
     height: 79px;
 }
 
+
 /*--------- CENTER-BOTTOM CELL ----------*/
+
 td.center-bottom {
     width: 615px;
     height: 79px;
@@ -142,7 +188,7 @@ td.center-bottom {
 div.salle {
     float: left;
     width: 610px;
-    height:79px;
+    height: 79px;
     background-image: url("../images/Support-Bois.png");
 }
 
@@ -152,7 +198,7 @@ div.etage {
     top: 7px;
     z-index: 2;
     width: 79px;
-    height:79px;
+    height: 79px;
     background-size: 60px;
     background-repeat: no-repeat;
 }
@@ -160,12 +206,16 @@ div.etage {
 div.N1plus {
     background-image: url("../images/Picto-N1plus.png");
 }
+
 div.S1plus {
     background-image: url("../images/Picto-S1plus.png");
 }
+
 div.N0plus {
     background-image: url("../images/Picto-N0plus.png");
 }
+
+
 /*************** TEXT ***************/
 
 input.titre,
@@ -177,7 +227,7 @@ span.titre {
     width: 100%;
 }
 
-div.salle{
+div.salle {
     align-content: bottom;
 }
 
@@ -220,17 +270,21 @@ hr {
 }
 
 .separation-line-regular {
-    height: 8px;
+    height: 6px;
 }
 
 .separation-line-big {
-    height: 15px;
+    height: 12px;
 }
 
+td.bandeau{
+    height: 120px;
+}
 /************** LAYOUT FRAME 2 *******/
 
 div.frame2btns {
     text-align: right;
+    padding: 20px;
 }
 
 button {
@@ -245,28 +299,41 @@ button {
 }
 
 .okbtn {
-    background-color: #30a72f;
+    background: url('/assets/images/crop.png') no-repeat;
 }
 
-
-/*************** LAYOUT CROP FRAME ********/
-
-.content {
-    max-width: 1290px;
-    padding: 0 1em;
-    margin: 0 auto;
-    text-align: center;
+.addbtn {
+    background-color: #ffcc00;
 }
 
-.component {
-    position: relative;
-    background: #3F3F3F;
-    padding: 4em;
-    height: 500px;
-    border: 3px solid #49708A;
-    max-width: 901px;
-    overflow: hidden;
-    margin: 0 auto;
+.image-upload > input {
+    display: none;
+}
+
+.column-left {
+    float: left;
+    width: 33%;
+}
+
+.column-center {
+    display: inline-block;
+    width: 33%;
+    padding-right: 20px;
+}
+
+.column-right {
+    float: right;
+    width: 33%;
+    padding-right: 15px;
+}
+
+div.frame-picto {
+    padding: 20px;
+}
+
+.okpictobtn,
+#okpictobtn {
+    float: right;
 }
 
 
@@ -299,10 +366,11 @@ button {
     }
 }
 
+
 @media screen and (min-width: 900px) {
     body {
-        zoom: 0.86;
-        -moz-transform: scale(0.86);
+        zoom: 0.994;
+        -moz-transform: scale(0.994);
         -moz-transform-origin: 0 0;
     }
 }
@@ -452,41 +520,3 @@ button {
     pointer-events: none;
 }
 
-.overlay:before {
-    top: 0;
-    margin-left: -2px;
-    margin-top: -40px;
-}
-
-.overlay:after {
-    bottom: 0;
-    margin-left: -2px;
-    margin-bottom: -40px;
-}
-
-.overlay-inner:before {
-    left: 0;
-    margin-left: -40px;
-    margin-top: -2px;
-}
-
-.overlay-inner:after {
-    right: 0;
-    margin-right: -40px;
-    margin-top: -2px;
-}
-
-.btn {
-    padding: 6px 10px;
-    background-color: rgb(222, 60, 80);
-    border: none;
-    border-radius: 2px;
-    color: #FFF;
-    margin: 10px 5px;
-    line-height: 30px;
-}
-
-.btn-crop img {
-    vertical-align: middle;
-    margin-left: 8px;
-}

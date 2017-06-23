@@ -2,18 +2,28 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- no cache -->
+    <META NAME="Cache-Control" CONTENT="no-cache">
+    <META NAME="pragma" CONTENT="no-cache">
+    <META NAME="expires" CONTENT="Wed, 31 Dec 2000 00 :00 :00 GMT">
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/lib/image-picker.css" />
 </head>
 
 <body>
     <div class='frame1'>
-        <div>
+<div class="black-banner-right"> </div>
+       <div>
             <table id='table_01'>
                 <!-- EN-TETE -->
                 <thead>
                     <tr>
-                        <td><img src="assets/images/bandeau_ETAGE.png" width="1080" height="120"></td>
+                        <td>
+                            <hr class="separation-line-big" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='bandeau'><img src="assets/images/bandeau_ETAGE.png" width="1080" height="120"></td>
                     </tr>
                     <tr>
                         <td colspan="3">
@@ -36,7 +46,7 @@
                                             <input id="titre1" class='titre' placeholder="SALLE NON RESERVEE" maxlength='40'>
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto1" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -75,7 +85,7 @@
                                             <input id='titre2' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto2" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -114,7 +124,7 @@
                                             <input id='titre3' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto3" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -153,7 +163,7 @@
                                             <input id='titre4' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto4" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -192,7 +202,7 @@
                                             <input id='titre5' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto5" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -231,7 +241,7 @@
                                             <input id='titre6' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto6" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -270,7 +280,7 @@
                                             <input id='titre7' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td class='right' rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto7" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -303,12 +313,12 @@
             <table id='table_02'>
                 <thead>
                     <tr>
-                        <td colspan="3">
+                        <td>
                             <hr class="separation-line-big" />
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">
+                        <td class='bandeau'>
                             <img src="assets/images/bandeau_NIVEAU.png" width="1080" height="120">
                         </td>
                     </tr>
@@ -332,7 +342,7 @@
                                             <input id='titre8' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto8" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -371,7 +381,7 @@
                                             <input id='titre9' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto9" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -410,7 +420,7 @@
                                             <input id='titre10' type='text' class='titre' placeholder="SALLE NON RESERVEE">
                                         </td>
                                         <td rowspan="2">
-                                            <img class="picto" src="assets/images/pictoEscNord.png">
+                                            <img class="picto" id="picto10" src="assets/images/pictoEscNord.png">
                                         </td>
                                     </tr>
                                     <tr>
@@ -422,7 +432,7 @@
                                                 <div class="salle-bottom">
                                                     FRèRES LUMIèRE
                                                 </div>
-                                            </div>
+                                                <?php include 'tables.html'; ?> </div>
                                             <div class="etage N0plus">
                                             </div>
                                         </td>
@@ -440,71 +450,171 @@
             </table>
         </div>
         <div class='frame1btns'>
-            <button id='publish' class="publishbtn" value="Submit">Submit</button>
+            <button id='reload' class='reloadbtn' value='Reload'>Rafraîchir</button>
+            <button id='reset' class='resetbtn' value='Reset'>Réinitialiser</button>
+            <button id='publish' class="publishbtn" value="Submit">Publier</button>
         </div>
-        <div class="frame2">
-            <div class="frame2select">
-                <select class="picker">
-                    <option data-img-src="assets/images/logo/ethicetape.gif" data-img-alt="Ethic" value="1">Ethic</option>
-                    <option data-img-src="assets/images/logo/europe_eco.gif" data-img-alt="Euro_Eco" value="2">Europe Eco</option>
-                    <option data-img-src="assets/images/logo/lyon_equi.gif" data-img-alt="Lyon_Equi" value="3">Lyon Equi</option>
-                    <option data-img-src="assets/images/logo/only_lyon.gif" data-img-alt="Only_Lyon" value="4">Only Lyon</option>
-                    <option data-img-src="assets/images/logo/rhone_tourisme.gif" data-img-alt="Rhone_Tourisme" value="5">Rhone Tourisme</option>
-                    <option data-img-src="assets/images/logo/unat.gif" data-img-alt="Unat" value="6">Unat</option>
-                    <option data-img-src="assets/images/logo/ville_lyon.gif" data-img-alt="Ville_Lyon" value="7">Ville Lyon</option>
-                </select>
-            </div>
-            <div class='frame2btns'>
-                <button type='button' class='editbtn' id='editbtn'>Editer</button>
-                <button type="button" class='okbtn' id="okbtn">OK</button>
-            </div>
+    </div>
+    <div class="frame2">
+        <div class="frame2select">
+            <select class="picker">
+            </select>
         </div>
-        <div class="frame3">
-            <div class="containerbtn">
-                <button class="btn js-back"> Retour </button>
-                <input type="file" class="btn js-loadfile" value="Upload" />
-                <button class="btn js-reset">Reset</button>
-                <button class="btn js-crop">Crop</button>
-                <button class="btn js-cropok">OK</button>
+        <div class='frame2btns'>
+            <div class="column-center">
+                <input type="image" src="/assets/images/crop.png" height="60" width="60" />
             </div>
-            <div class="crop-wrapper">
-                <div class="top-overlay">
-                </div>
-                <div class="bottom-overlay">
-                </div>
-                <div class="left-overlay">
-                </div>
-                <div class="right-overlay">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-inner">
+            <div class="column-left">
+                <form id="upload">
+                    <div class="image-upload">
+                        <label for="file">
+                            <img src="/assets/images/add.png" height="60" width="60" />
+                        </label>
+                        <input type="file" id="file" />
                     </div>
-                </div>
-                <img class="resize-image" src="assets/images/default.png" alt="image for resizing">
+                </form>
+            </div>
+            <div class="column-right">
+                <input type="image" class='.okbtn' id='okbtn' src="/assets/images/checked.png" height="60" width="60" />
             </div>
         </div>
-        <!-- load script at last in order to avoid assets loading obstacle -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/assets/js/lib/image-picker.js"></script>
-        <script src="/assets/js/script.js"></script>
-        <script src="/assets/js/crop.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-        var socket = io();
-        $('#publish').click(function(e) {
-            e.preventDefault();
-            var posts = [];
-            for (var i = 1; i <= 10; i++) {
-                var block = {};
-                block.id = i;
-                block.title = $('#titre' + i).val();
-                block.logosrc = $('#logo' + i).attr('src');
-                block.pictosrc = $('#picto' + i).attr('src');
-                posts.push(block);
-            }
-            socket.emit('new info', posts);
+    </div>
+    <div class="frame-picto">
+        <div class="frame-picto-select">
+            <select class="picker-picto">
+                <option class='picto' data-img-src="assets/images/picto/Picto-Ascenceur-Droit.png" value="1"></option>
+                <option class='picto' data-img-src="assets/images/picto/Picto-Ascenceur-Gauche.png" value="2"></option>
+                <option class='picto' data-img-src="assets/images/picto/Picto-Escalier-Droit.png" value="3"></option>
+                <option class='picto' data-img-src="assets/images/picto/Picto-Escalier-Gauche.png" value="4"></option>
+            </select>
+        </div>
+        <div class='.okpictobtn'>
+            <input type="image" class='.okbtn' id='okpictobtn' src="/assets/images/checked.png" height="60" width="60" />
+        </div>
+    </div>
+    <!-- load script at last in order to avoid assets loading obstacle -->
+    <script src="/assets/js/lib/jquery-3.2.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/lib/socket.io-file-client.js"></script>
+    <script src="/assets/js/lib/fit-text.js"></script>
+    <script src="/assets/js/lib/image-picker.js"></script>
+    <script src="/assets/js/action-buttons.js"></script>
+    <script>
+    $(function() {
+        $('.titre').each(function(index) {
+            $(this).keyup(function() {
+                shrinkToFill(this, 36, "", 'AkzidenzGroteskBlack');
+            });
         });
-        </script>
+    });
+    </script>
+    <script>
+    var socket = io();
+    var uploader = new SocketIOFileClient(socket);
+    var form = document.getElementById('upload');
+
+    //************* uploader states *******************
+    // uploader.on('start', function(fileInfo) {
+    //     console.log('Start uploading', fileInfo);
+    // });
+    // uploader.on('stream', function(fileInfo) {
+    //     console.log('Streaming... sent ' + fileInfo.sent + ' bytes.');
+    // });
+    uploader.on('complete', function(fileInfo) {
+        console.log('Upload Complete', fileInfo);
+        srcSelectedLogo = $('option:selected', '.picker').attr('data-img-src');
+        $('option:selected', '.picker').attr('data-img-src', "assets/images/" + fileInfo.name);
+        $("select").imagepicker(); //reinit the picker
+        var msg = {
+            srcSelectedOption: srcSelectedLogo,
+            infoNewFile: fileInfo
+        };
+        socket.emit('new logo', msg);
+    });
+    // uploader.on('error', function(err) {
+    //     console.log('Error!', err);
+    // });
+    // uploader.on('abort', function(fileInfo) {
+    //     console.log('Aborted: ', fileInfo);
+    // });
+
+    //******** form submit *****************
+    form.onchange = function(ev) {
+        ev.preventDefault();
+        var fileEl = document.getElementById('file');
+        var uploadIds = uploader.upload(fileEl);
+        return false;
+    };
+
+
+    //*********** update from server ******************
+    socket.on('update logo gallery', function(files) {
+        var options = "";
+        value = 1;
+        files.forEach(function(fileName) {
+            options += "<option class = 'logo' data-img-src='" + "assets/images/logo/" + fileName + "' value=" + value + "></option>";
+            value += 1;
+        });
+        $('select.picker').html(options);
+        $("select").imagepicker(); //reinit the picker
+    });
+
+    socket.on('update display', function(stateDB) {
+        var arrayDB = stateDB.posts;
+        for (var i = 1; i <= 10; i++) {
+            var block = arrayDB[i - 1];
+            $('#titre' + i).val(block.title);
+            $('#logo' + i).attr('src', block.logosrc);
+            $('#picto' + i).attr('src', block.pictosrc);
+        }
+        // fit text into text boxes
+        $(function() {
+            $('.titre').each(function(index) {
+                shrinkToFill($(this), 36, "", 'AkzidenzGroteskBlack');
+            });
+        });
+    });
+
+    //*********** RELOAD ******************
+    $('#reload').click(function(e) {
+        e.preventDefault();
+        location.reload();
+    });
+
+
+
+    //*********** RESET ******************
+    $('#reset').click(function(e) {
+        e.preventDefault();
+        $('.titre').each(function(index) {
+            $(this).val('');
+        });
+        for (var i = 1; i <= 10; i++) {
+            $('#logo' + i).attr('src', 'assets/images/CISL.png');
+        }
+        // fit text into text boxes
+        $(function() {
+            $('.titre').each(function(index) {
+                shrinkToFill($(this), 36, "", 'AkzidenzGroteskBlack');
+            });
+        });
+    });
+
+    //**********PUBLISH *****************
+    $('#publish').click(function(e) {
+        e.preventDefault();
+        var posts = [];
+        for (var i = 1; i <= 10; i++) {
+            var block = {};
+            block.id = i;
+            block.title = $('#titre' + i).val();
+            block.logosrc = $('#logo' + i).attr('src');
+            block.pictosrc = $('#picto' + i).attr('src');
+            posts.push(block);
+        }
+        socket.emit('new info', posts);
+    });
+    </script>
 </body>
 
 </html>

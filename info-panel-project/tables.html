@@ -1,25 +1,9 @@
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <link rel="stylesheet" href="/assets/css/lib/image-picker.css" />
-</head>
-
-<body>
-    <div class='frame1'>
-<div class="black-banner-right"></div>
-        <div>
+  <div>
             <table id='table_01'>
                 <!-- EN-TETE -->
                 <thead>
                     <tr>
-                        <td>
-                            <hr class="separation-line-big" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class='bandeau'><img src="assets/images/bandeau_ETAGE.png" width="1080" height="120"></td>
+                        <td><img src="assets/images/bandeau_ETAGE.png" width="1080" height="120"></td>
                     </tr>
                     <tr>
                         <td colspan="3">
@@ -309,12 +293,12 @@
             <table id='table_02'>
                 <thead>
                     <tr>
-                        <td>
+                        <td colspan="3">
                             <hr class="separation-line-big" />
                         </td>
                     </tr>
                     <tr>
-                        <td class='bandeau'>
+                        <td colspan="3">
                             <img src="assets/images/bandeau_NIVEAU.png" width="1080" height="120">
                         </td>
                     </tr>
@@ -428,7 +412,7 @@
                                                 <div class="salle-bottom">
                                                     FRèRES LUMIèRE
                                                 </div>
-                                                <?php include 'tables.html'; ?> </div>
+                                            </div>
                                             <div class="etage N0plus">
                                             </div>
                                         </td>
@@ -445,31 +429,3 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <!-- load script at last in order to avoid assets loading obstacle -->
-    <script src="/assets/js/lib/jquery-3.2.1.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/assets/js/lib/fit-text.js"></script>
-    <script>
-    $(function() {
-        var socket = io();
-        socket.on('update display', function(stateDB) {
-            var arrayDB = stateDB.posts;
-            for (var i = 1; i <= 10; i++) {
-                var block = arrayDB[i - 1];
-                $('#titre' + i).val(block.title);
-                $('#logo' + i).attr('src', block.logosrc);
-                $('#picto' + i).attr('src', block.pictosrc);
-            }
-            // fit text into text boxes
-            $(function() {
-                $('.titre').each(function(index) {
-                    shrinkToFill($(this), 36, "", 'AkzidenzGroteskBlack');
-                });
-            });
-        });
-    });
-    </script>
-</body>
-
-</html>

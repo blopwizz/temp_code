@@ -2,53 +2,63 @@
   "posts": [
     {
       "id": 1,
-      "title": "greaqv",
-      "logosrc": "assets/images/logo/europe_eco.gif"
+      "title": "",
+      "logosrc": "assets/images/logo/download (3).jpg",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 2,
-      "title": "gre",
-      "logosrc": "assets/images/logo/only_lyon.gif"
+      "title": "",
+      "logosrc": "assets/images/logo/europe_eco.gif",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 3,
       "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "logosrc": "assets/images/CISL.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 4,
       "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "logosrc": "assets/images/CISL.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 5,
       "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "logosrc": "assets/images/logo/CISL.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 6,
       "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "logosrc": "assets/images/CISL.png",
+      "pictosrc": "assets/images/picto/Picto-Ascenceur-Gauche.png"
     },
     {
       "id": 7,
       "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "logosrc": "assets/images/CISL.png",
+      "pictosrc": "assets/images/picto/Picto-Ascenceur-Gauche.png"
     },
     {
       "id": 8,
-      "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "title": "RÉunion cgt",
+      "logosrc": "assets/images/logo/Logo-cgt.svg.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 9,
-      "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "title": "Salle reservée",
+      "logosrc": "assets/images/logo/Logo-cgt.svg.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     },
     {
       "id": 10,
-      "title": "",
-      "logosrc": "assets/images/CISL.png"
+      "title": "Salle réservée ",
+      "logosrc": "assets/images/logo/Logo-cgt.svg.png",
+      "pictosrc": "assets/images/picto/Picto-Escalier-Droit.png"
     }
   ]
 }
