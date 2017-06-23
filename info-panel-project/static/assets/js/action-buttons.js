@@ -8,6 +8,7 @@ $(document).ready(function() {
         $('.frame2').hide();
         $('.frame2').css({ 'top': e.pageY - 50, 'left': e.pageX });
         $('.frame2').show();
+        
         $('.column-right').unbind().click(function() {
             $('.frame2').hide();
             srcSelectedLogo = $('option:selected', '.picker').attr('data-img-src');

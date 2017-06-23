@@ -12,8 +12,8 @@
 
 <body>
     <div class='frame1'>
-<div class="black-banner-right"> </div>
-       <div>
+        <div class="black-banner-right"> </div>
+        <div>
             <table id='table_01'>
                 <!-- EN-TETE -->
                 <thead>
@@ -500,16 +500,16 @@
     <script src="/assets/js/lib/fit-text.js"></script>
     <script src="/assets/js/lib/image-picker.js"></script>
     <script src="/assets/js/action-buttons.js"></script>
+    <script src="/assets/js/action-eventsFromServer.js"></script>
     <script>
+    //fit text
     $(function() {
-        $('.titre').each(function(index) {
-            $(this).keyup(function() {
-                shrinkToFill(this, 36, "", 'AkzidenzGroteskBlack');
-            });
+        var socket = io();
+        $('.titre').each(function(index) {$(this).keyup(function() {
+            shrinkToFill(this, 36, "", 'AkzidenzGroteskBlack');});
         });
     });
     </script>
-    <script src="/assets/js/action-eventsFromServer.js"></script>
 </body>
 
 </html>
