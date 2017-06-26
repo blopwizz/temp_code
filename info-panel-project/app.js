@@ -30,7 +30,6 @@ For ease of use, read is synchronous.
 var db = low('db.json', { storage: fileAsync });
 
 //*********** ROUTES *******************
-app.use(express.static(__dirname + '/static'));
 app.get('/app.js', function(req, res, next) {
     return res.sendFile(__dirname + '/server.js');
 });
@@ -57,14 +56,6 @@ app.post('/blocks', function(req, res) {
         });
 });
 
-// dynamically include routes (Controller)
-fs.readdirSync('./controllers').forEach(function(file) {
-    if (file.substr(-3) == '.js') {
-        route = require('./controllers/' + file);
-        route.controller(app);
-    }
-});
-
 //************ SERVER INIT **************************
 db.defaults({ posts: [] }).write()
     .then(function() {
@@ -75,15 +66,15 @@ db.defaults({ posts: [] }).write()
 app.get('/edit', function(req, res) {
     io.on('connection', function(socket) {
         socket.emit('update display', db.getState());
-        var files = fs.readdirSync('static/assets/images/logo/');
+        var files = fs.readdirSync('public/images/logo/');
         while (files.length > 10) {
             var i = files.length - 1;
-            fs.unlink('static/assets/images/logo/' + files[i]);
+            fs.unlink('public/images/logo/' + files[i]);
             files.splice(i, 1);
         }
         io.emit('update logo gallery', files);
     });
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/views/index.html');
 });
 
 // when loading display page
@@ -91,7 +82,7 @@ app.get('/', function(req, res) {
     io.on('connection', function(socket) {
         socket.emit('update display', db.getState());
     });
-    res.sendFile(__dirname + '/display.html');
+    res.sendFile(__dirname + '/views/display.html');
 });
 
 
@@ -100,7 +91,7 @@ app.get('/', function(req, res) {
 
 io.on('connection', function(socket) {
     var uploader = new SocketIOFile(socket, {
-        uploadDir: 'static/assets/images/logo', // simple directory 
+        uploadDir: 'public/images/logo', // simple directory 
         accepts: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'], // chrome and some of browsers checking mp3 as 'audio/mp3', not 'audio/mpeg' 
         maxFileSize: 4194304, // 4 MB. default is undefined(no limit) 
         chunkSize: 10240, // default is 10240(1KB) 
@@ -133,10 +124,10 @@ io.on('connection', function(socket) {
     });
 
     socket.on('new logo', function(msg) {
-        var files = fs.readdirSync('static/assets/images/logo/');
+        var files = fs.readdirSync('public/images/logo/');
         while (files.length > 10) {
             var i = files.length - 1;
-            fs.unlink('static/assets/images/logo/' + files[i]);
+            fs.unlink('public/images/logo/' + files[i]);
             files.splice(i, 1);
         }
         io.emit('update logo gallery', files);
