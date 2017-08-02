@@ -2,7 +2,7 @@ var bg;
 
 function setup() {
 	bg = loadImage("img/blackboard.jpg");
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth-20, windowHeight-20);
 }
 
 function draw() {
