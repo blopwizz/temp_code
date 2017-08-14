@@ -1,14 +1,15 @@
 var bg;
+var pizza;
 
 function setup() {
 	bg = loadImage("img/blackboard.jpg");
-	createCanvas(windowWidth-20, windowHeight-20);
+	createCanvas(windowWidth, windowHeight);	
 }
 
 function draw() {
 	background(bg);
 	fill(255);
-	if (mouseIsPressed){
+	if (mouseIsPressed) {
 		ellipse(mouseX, mouseY, 100, 100);
 	}
 }
