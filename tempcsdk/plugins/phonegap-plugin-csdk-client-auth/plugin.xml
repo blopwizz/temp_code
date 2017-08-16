@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="phonegap-plugin-csdk-client-auth" version="1.0.6">
+  <name>phonegap-plugin-csdk-client-auth</name>
+  <preference name="CSDK_CLIENT_ID_IOS"/>
+  <preference name="CSDK_CLIENT_ID_ANDROID"/>
+  <preference name="CSDK_CLIENT_SECRET_IOS"/>
+  <preference name="CSDK_CLIENT_SECRET_ANDROID"/>
+  <platform name="android">
+    <hook type="after_prepare" src="scripts/modifyAndroidManifest.js"/>
+    <framework src="csdk.gradle" custom="true" type="gradleReference"/>
+    <framework src="com.android.support:multidex:1.0.0+"/>
+    <framework src="com.adobe.creativesdk.foundation:auth:0.9.1186+"/>
+    <source-file src="src/android/AdobeAuthCredentialsApp.java" target-dir="src/com/adobe/phonegap/csdk"/>
+    <config-file target="res/values/strings.xml" parent="/resources">
+      <string name="csdk_client_id_android">$CSDK_CLIENT_ID_ANDROID</string>
+      <string name="csdk_client_secret_android">$CSDK_CLIENT_SECRET_ANDROID</string>
+    </config-file>
+  </platform>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="AdobeAuthCredentials">
+        <param name="ios-package" value="AdobeAuthCredentials"/>
+        <param name="onload" value="true"/>
+      </feature>
+    </config-file>
+    <config-file target="*-Info.plist" parent="CreativeSDK">
+      <key>CreativeSDK</key>
+      <dict>
+        <key>CSDKClientID_iOS</key>
+        <string>$CSDK_CLIENT_ID_IOS</string>
+        <key>CSDKClientSecret_iOS</key>
+        <string>$CSDK_CLIENT_SECRET_IOS</string>
+      </dict>
+    </config-file>
+    <source-file src="src/ios/AdobeAuthCredentials.m"/>
+    <resource-file src="src/ios/AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle"/>
+    <framework src="src/ios/AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework" custom="true"/>
+    <framework src="CoreMotion.framework" weak="true"/>
+    <framework src="CoreBluetooth.framework" weak="true"/>
+    <framework src="MobileCoreServices.framework"/>
+    <framework src="Security.framework"/>
+    <framework src="SystemConfiguration.framework"/>
+    <framework src="libc++.dylib"/>
+    <framework src="libz.dylib"/>
+  </platform>
+</plugin>
